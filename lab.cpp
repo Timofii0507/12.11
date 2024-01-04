@@ -4,20 +4,20 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    cout << "Ââåä³òü ðÿäîê: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Â³Ã²Ã¼ Ã°Ã¿Ã¤Ã®Ãª: ";
     string inputString;
     getline(cin, inputString);
-    for (char& ch : inputString) 
+    for (char& ch : inputString)
     {
-        if (ch == ' ') 
+        if (ch == ' ')
         {
             ch = '\t';
         }
     }
-    cout << "Çì³íåíèé ðÿäîê: " << inputString << endl;
+    cout << "Ã‡Ã¬Â³Ã­Ã¥Ã­Ã¨Ã© Ã°Ã¿Ã¤Ã®Ãª: " << inputString << endl;
     return 0;
 }
