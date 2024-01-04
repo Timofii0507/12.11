@@ -5,31 +5,31 @@ using namespace std;
 
 int main() 
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    char str[100];
-    int count_letters = 0;
-    int count_digits = 0;
-    int count_other = 0;
-    cout << "Ââåä³òü ðÿäîê: ";
-    cin.getline(str, 100);
-    for (int i = 0; str[i] != '\0'; i++) 
-    {
-        if (isalpha(str[i])) 
-        {
-            count_letters++;
-        }
-        else if (isdigit(str[i])) 
-        {
-            count_digits++;
-        }
-        else 
-        {
-            count_other++;
-        }
-    }
-    cout << "Ê³ëüê³ñòü ë³òåð: " << count_letters << endl;
-    cout << "Ê³ëüê³ñòü öèôð: " << count_digits << endl;
-    cout << "Ê³ëüê³ñòü ³íøèõ ñèìâîë³â: " << count_other << endl;
-    return 0;
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int letters = 0;
+	int digits = 0;
+	int other_symbols = 0;
+	char str[100];
+	cout << "Ã‚Ã¢Ã¥Ã¤Â³Ã²Ã¼ Ã°Ã¿Ã¤Ã®Ãª: ";
+	cin.getline(str, 100);
+	for (int i = 0; str[i] != '\0'; i++) 
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'Ã€' && str[i] <= 'ÃŸ') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'Ã ' && str[i] <= 'Ã¿')) 
+		{
+			letters++;
+		}
+		if (str[i] >= '0' && str[i] <= '9' && str[i] != 'Ã€' && str[i] != 'Ã ') 
+		{
+			digits++;
+		}
+		if ((str[i] == '!' || str[i] == '?' || str[i] == ',' || str[i] == '.' || str[i] == ';' || str[i] == ':' || str[i] == '-' || str[i] == '=' || str[i] == '+' || str[i] == '*' || str[i] == '/' || str[i] == '"')) 
+		{
+			other_symbols++;
+		}
+	}
+	cout << "ÃŠÂ³Ã«Ã¼ÃªÂ³Ã±Ã²Ã¼ Ã«Â³Ã²Ã¥Ã°: " << letters << endl;
+	cout << "ÃŠÂ³Ã«Ã¼ÃªÂ³Ã±Ã²Ã¼ Ã¶Ã¨Ã´Ã°: " << digits << endl;
+	cout << "ÃŠÂ³Ã«Ã¼ÃªÂ³Ã±Ã²Ã¼ Â³Ã­Ã¸Ã¨Ãµ Ã±Ã¨Ã¬Ã¢Ã®Ã«Â³Ã¢: " << other_symbols << endl;
+	return 0;
 }
