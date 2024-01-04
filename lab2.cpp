@@ -5,31 +5,31 @@ using namespace std;
 
 int main() 
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    char str[100];
-    int count_letters = 0;
-    int count_digits = 0;
-    int count_other = 0;
-    cout << "Введіть рядок: ";
-    cin.getline(str, 100);
-    for (int i = 0; str[i] != '\0'; i++) 
-    {
-        if (isalpha(str[i])) 
-        {
-            count_letters++;
-        }
-        else if (isdigit(str[i])) 
-        {
-            count_digits++;
-        }
-        else 
-        {
-            count_other++;
-        }
-    }
-    cout << "Кількість літер: " << count_letters << endl;
-    cout << "Кількість цифр: " << count_digits << endl;
-    cout << "Кількість інших символів: " << count_other << endl;
-    return 0;
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int letters = 0;
+	int digits = 0;
+	int other_symbols = 0;
+	char str[100];
+	cout << "Введіть рядок: ";
+	cin.getline(str, 100);
+	for (int i = 0; str[i] != '\0'; i++) 
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'А' && str[i] <= 'Я') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'а' && str[i] <= 'я')) 
+		{
+			letters++;
+		}
+		if (str[i] >= '0' && str[i] <= '9' && str[i] != 'А' && str[i] != 'а') 
+		{
+			digits++;
+		}
+		if ((str[i] == '!' || str[i] == '?' || str[i] == ',' || str[i] == '.' || str[i] == ';' || str[i] == ':' || str[i] == '-' || str[i] == '=' || str[i] == '+' || str[i] == '*' || str[i] == '/' || str[i] == '"')) 
+		{
+			other_symbols++;
+		}
+	}
+	cout << "Кількість літер: " << letters << endl;
+	cout << "Кількість цифр: " << digits << endl;
+	cout << "Кількість інших символів: " << other_symbols << endl;
+	return 0;
 }

@@ -4,16 +4,16 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     cout << "¬вед≥ть р€док: ";
     string inputString;
     getline(cin, inputString);
-    for (char& ch : inputString) 
+    for (char& ch : inputString)
     {
-        if (ch == ' ') 
+        if (ch == ' ')
         {
             ch = '\t';
         }
